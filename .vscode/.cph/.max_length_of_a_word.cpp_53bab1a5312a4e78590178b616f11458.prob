@@ -1,0 +1,1 @@
+{"name":"Local: max_length_of_a_word","url":"c:\\Programs\\Cpp program\\.vscode\\max_length_of_a_word.cpp","tests":[{"id":1620651428402,"input":"50\nI am a good boy","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Programs\\Cpp program\\.vscode\\max_length_of_a_word.cpp","group":"local","local":true}

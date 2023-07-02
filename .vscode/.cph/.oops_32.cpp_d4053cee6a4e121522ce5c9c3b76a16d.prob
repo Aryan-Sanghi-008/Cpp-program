@@ -1,0 +1,1 @@
+{"name":"Local: oops_32","url":"c:\\Programs\\Cpp program\\.vscode\\oops_32.cpp","tests":[{"id":1637939753390,"input":"1001 100\n1002 200\n1003 300","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Programs\\Cpp program\\.vscode\\oops_32.cpp","group":"local","local":true}

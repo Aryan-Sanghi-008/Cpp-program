@@ -1,0 +1,11 @@
+{
+    "editor.mouseWheelZoom": true,
+    "files.associations": {
+        "iostream": "cpp",
+        "ostream": "cpp",
+        "cmath": "cpp",
+        "valarray": "cpp",
+        "complex": "cpp"
+    },
+    "code-runner.runInTerminal": true
+}
