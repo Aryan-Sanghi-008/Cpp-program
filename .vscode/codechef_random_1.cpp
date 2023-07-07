@@ -536,20 +536,26 @@ void solution()
 {
     ll n;
     cin >> n;
-    vector<string> v(n);
-    ll ca = 0, cb = 0, cab = 0, co = 0;
-    for(int i = 0; i < n; i++)
+    string s;
+    cin >> s;
+    ll cnt = 0;
+    for(int i = 0; i < n - 1; i++)
     {
-        cin >> v[i];
-        ca += (v[i] == "A");
-        cb += (v[i] == "B");
-        cab += (v[i] == "AB");
-        co += (v[i] == "O");
+        if(s[i] == ':' && s[i + 1] == ')')
+        {
+            i++;
+            while(s[i] == ')' && i < n)
+            {
+                i++;
+            }
+            if(i < n && s[i] == ':')
+            {
+                cnt++;
+                i--;
+            }
+        }
     }
-
-    ll val1 = ca + cab, val2 = cb + cab, val3 = co + max(ca, cb) + cab, val4 = cab;
-    cout << max({val1, val2, val3, val4}) << endl;
-
+    cout << cnt << endl;
 }
 
 int main()

@@ -534,29 +534,27 @@ ll binpow(ll base, ll exp)
 
 void solution()
 {
-    ll n, m, h;
-    cin >> n >> m >> h;
-    vii a(n, 0);
-    for(auto &i : a)
+    ll n, q;
+    cin >> n >> q;
+    vii v(n, 0);
+    for(auto &i : v)
     {
         cin >> i;
     }
-    vii b(m, 0);
-    for(auto &i : b)
+    sort(all(v));
+    vii pref(n, 0);
+    pref[0] = ((n - 1 - 0) * (n - 2 - 0)) >> 1;
+    for(int i = 1; i < n; i++)
     {
-        cin >> i;
+        pref[i] = (((n - 1 - i) * (n - 2 - i)) >> 1) + pref[i - 1]; 
     }
-    sort(all(a), greater<ll>());
-    sort(all(b), greater<ll>());
-    ll sum = 0;
-    ll minn = min(n, m);
-    ll j = 0;
-    while(j < minn)
+    for(int i = 0; i < q; i++)
     {
-        sum += min(a[j], b[j] * h);
-        j++;
+        ll x;
+        cin >> x;
+        ll lb = lower_bound(all(pref), x) - pref.begin();
+        cout << v[lb] << endl;
     }
-    cout << sum << endl;
 }
 
 int main()

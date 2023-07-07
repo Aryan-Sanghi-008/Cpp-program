@@ -534,23 +534,20 @@ ll binpow(ll base, ll exp)
 
 void solution()
 {
-    ll n;
-    cin >> n;
-    vector<ull> v(n, 0);
-    for (auto &i : v)
-    {
-        cin >> i;
-    }
+    ll n, k;
+    cin >> n >> k;
+    ll len = 2 + k + ((k - 1) >> 1); 
 
-    ll maxn = *max_element(all(v));
-    ll bitset = 0, cntbits = log2(maxn);
+    // number of ones
+    // n - 1 because 1st element is 1
+    ll x = ((n - 1) / len) + 1;
 
-    for (auto &i : v)
-    {
-        bitset += ((i & (1LL << cntbits)) > 0);
-    }
+    // number of twos
+    // n - k - 2 because k + 2 th element is 2
+    ll y = n >= k + 2 ? ((n - k - 2) / len) + 1 : 0;
+    y <<= 1;
+    cout << x + y << endl;
 
-    cout << ((bitset + 1) >> 1) << endl;
 }
 
 int main()
